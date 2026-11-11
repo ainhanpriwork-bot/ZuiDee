@@ -92,6 +92,7 @@ const SECTIONS = ["home", "setup", "lobby", "game"];
 function show(id) {
   SECTIONS.forEach(s => $("#" + s).classList.toggle("hidden", s !== id));
   document.body.className = (id === "home" || !G) ? "t-home" : "t-" + G.id;
+  if (window.ZDMusic) window.ZDMusic.setTheme(G && id !== "home" ? G.id : "hdd");
   window.scrollTo(0, 0);
 }
 

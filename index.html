@@ -257,6 +257,10 @@ body.t-ldd .tab.on{background:var(--p3)}
 .chip-stat.room{background:#1a1a1a;color:#fff}
 .chipT.mine{outline:3px solid #fff;outline-offset:1px;cursor:pointer}
 span.bettor{cursor:default}
+.music-btn{position:fixed;left:10px;bottom:10px;z-index:75;border:3px solid #1a1a1a;border-radius:50%;background:#FFD200;font-size:20px;width:46px;height:46px;padding:0;box-shadow:3px 3px 0 #1a1a1a;cursor:pointer;line-height:1}
+.music-btn.off{background:#fff;opacity:.85}
+.music-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #1a1a1a}
+
 </style>
 </head>
 <body class="t-home">
@@ -301,6 +305,9 @@ span.bettor{cursor:default}
 <div id="modalRoot"></div>
 <div id="toast"></div>
 
+<button id="musicBtn" class="music-btn" type="button" title="Bật/tắt nhạc nền" aria-label="Bật/tắt nhạc nền">🎵</button>
+
+<script src="music.js"></script>
 <script src="data.js"></script>
 <script src="game.js"></script>
 </body>
