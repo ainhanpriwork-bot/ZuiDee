@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zui Dee – Boardgame Bỏ Túi | Nhóm 1 – Tinh thần doanh nhân</title>
+<meta name="description" content="Thuyết trình dự án Boardgame bỏ túi Zui Dee – Nhóm 1, học phần Tinh thần doanh nhân.">
+<link rel="icon" href="assets/logo-color.png">
+<meta property="og:title" content="Zui Dee – Boardgame Bỏ Túi">
+<meta property="og:description" content="Thuyết trình dự án Zui Dee – Nhóm 1, Tinh thần doanh nhân">
+<meta property="og:image" content="assets/logo-color.png">
+<link rel="preload" href="fonts/paytone-one.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/lexend.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <img src="assets/logo-white.png" alt="Zui Dee">
+  <span class="t">BOARDGAME BỎ TÚI · NHÓM 1</span>
+  <span class="sp"></span>
+  <select id="jump" aria-label="Chuyển đến slide"></select>
+  <button id="btnPresent" title="Phím F">▶ Trình chiếu</button>
+</header>
+
+<main class="deck" id="deck">
+
+<!-- 1 COVER -->
+<section class="slide blue cover" id="s1" data-title="Trang bìa"><div class="stage">
+  <h1>BOARDGAME BỎ TÚI</h1>
+  <div class="tags"><span class="tag">MÔN: TINH THẦN DOANH NHÂN</span><span class="tag">NHÓM 1</span></div>
+  <div class="meta">LHP: 261_71ENSP40723_01<br>GVHD: Th.S Nguyễn Thanh Lâm</div>
+</div></section>
+
+<!-- 2 TEAM -->
+<section class="slide" id="s2" data-title="Team member"><div class="stage">
+  <div class="hdr">TEAM MEMBER</div>
+  <div class="team"><table class="t th-blue">
+    <colgroup><col style="width:37%"><col style="width:37%"><col style="width:26%"></colgroup>
+    <tr><th>HỌ VÀ TÊN</th><th>MSSV</th><th>TỈ LỆ ĐÓNG GÓP</th></tr>
+    <tr><td>Nguyễn Huỳnh Ái Nhân (Leader)</td><td>2373201041030</td><td>100%</td></tr>
+    <tr><td>Đặng Hương Giang</td><td>2373201040339</td><td>100%</td></tr>
+    <tr><td>Phan Anh Thoại</td><td>2373201041436</td><td>100%</td></tr>
+    <tr><td>Huỳnh Vũ Nhân</td><td>2373201041028</td><td>100%</td></tr>
+    <tr><td>Nguyễn Phương Dung</td><td>2373201040251</td><td>100%</td></tr>
+    <tr><td>Võ Ngọc Uyên Lan</td><td>2373201040670</td><td>100%</td></tr>
+    <tr><td>Nguyễn Ngô Bảo Nhi</td><td>2373201041073</td><td>98,5%</td></tr>
+    <tr><td>Trần Phương Phương</td><td>2373201041237</td><td>98,5%</td></tr>
+    <tr><td>Phạm Hoàng Quân</td><td>2373201041256</td><td>85%</td></tr>
+    <tr><td>Vũ Xuân Hà</td><td>2373201040363</td><td>97%</td></tr>
+  </table></div>
+</div></section>
+
+<!-- 3 TOC -->
+<section class="slide" id="s3" data-title="Table of contents"><div class="stage">
+  <div class="hdr">TABLE OF CONTENTS</div>
+  <nav class="toc">
+    <a href="#s4"><span class="n">01.</span>Tóm tắt dự án</a>
+    <a href="#s13"><span class="n">06.</span>Vận hành, tổ chức<span class="s">&amp; pháp lý</span></a>
+    <a href="#s5"><span class="n">02.</span>Thị trường &amp; khách hàng</a>
+    <a href="#s17"><span class="n">07.</span>Truyền thông</a>
+    <a href="#s7"><span class="n">03.</span>Đề xuất giá trị &amp;<span class="s">MVP</span></a>
+    <a href="#s19"><span class="n">08.</span>Tài chính<span class="s">&amp; huy động vốn</span></a>
+    <a href="#s9"><span class="n">04.</span>Mô hình Canvas</a>
+    <a href="#s21"><span class="n">09.</span>Khả thi &amp; rủi ro</a>
+    <a href="#s10"><span class="n">05.</span>Doanh thu, định giá<span class="s">&amp; kinh tế đơn vị</span></a>
+    <a href="#s22"><span class="n">10.</span>Lộ trình 12 tháng<span class="s">&amp; kết luận</span></a>
+  </nav>
+</div></section>
+
+<!-- 4 SUMMARY -->
+<section class="slide" id="s4" data-title="01. Tóm tắt dự án"><div class="stage">
+  <div class="hdr">01. TÓM TẮT DỰ ÁN</div>
+  <div class="panel"></div>
+  <div class="sum">
+    <div style="height:192px"><span class="lab">VẤN ĐỀ</span><div class="txt"><ul>
+      <li>Người chơi trẻ khó gom đủ người.</li><li>Ngại luật dài, sợ game nhanh chán</li><li>Chơi ở quán cà phê, bàn nhỏ.</li></ul></div></div>
+    <div><span class="lab">MÔ HÌNH KIẾM TIỀN</span><div class="txt">Bán lẻ 200.000 đ/bộ qua sàn TMĐT.<br>Phụ: bản mở rộng, combo quà, đơn doanh nghiệp.</div></div>
+    <div style="height:192px"><span class="lab">GIẢI PHÁP</span><div class="txt"><ul>
+      <li>Linh hoạt số lượng người chơi.</li><li>Setup trò chơi nhanh chóng, tiện lợi.</li><li>Tăng khả năng chơi lại.</li></ul></div></div>
+    <div><span class="lab">KẾT QUẢ ĐÃ ĐẠT</span><div class="txt" style="text-align:justify">141 phiếu khảo sát, 6 phỏng vấn sâu, 32 bình luận đối thủ; prototype và 3 cải tiến sau playtest; bảng tính tài chính 3 kịch bản.</div></div>
+    <div><span class="lab">KHÁCH HÀNG</span><div class="txt"><ul>
+      <li>Sinh viên Gen Z hay tụ tập ở quán cà phê, trà chanh.</li><li>Doanh nghiệp có nhu cầu đặt custom.</li></ul></div></div>
+    <div><span class="lab">NHU CẦU VỐN</span><div class="txt" style="text-align:justify">Nhóm đã góp 5.500.000đ, đủ cho nhu cầu 3.960.000đ. Gọi thêm <b class="cr it">39.840.000đ</b> để in lô lớn, đưa lãi góp lên 83.000đ/bộ.</div></div>
+  </div>
+  <img class="abs" src="assets/logo-color.png" alt="" style="left:540px;top:460px;width:96px">
+</div></section>
+
+<!-- 5 PERSONA -->
+<section class="slide" id="s5" data-title="02. Thị trường – Persona"><div class="stage">
+  <div class="hdr">02. THỊ TRƯỜNG &amp; KHÁCH HÀNG</div>
+  <div class="panel"></div>
+  <div class="abs ttl red" style="left:40px;width:682px;top:200px;font-size:26px">PERSONA</div>
+  <div class="stat" style="left:40px;top:252px;width:208px;height:144px;background:var(--green)"><b>141</b><span>phiếu khảo sát trực tuyến<br>(25–26/9/2026)</span></div>
+  <div class="stat" style="left:275px;top:252px;width:208px;height:144px;background:var(--red)"><b>6</b><span>phỏng vấn sâu,<br>18–25 tuổi</span></div>
+  <div class="stat" style="left:513px;top:252px;width:208px;height:144px;background:var(--pink)"><b>32</b><span>bình luận trên<br>kênh đối thủ</span></div>
+  <div class="abs ttl red" style="left:40px;width:682px;top:450px;font-size:26px">KẾT QUẢ KHẢO SÁT CHÍNH</div>
+  <div class="stat" style="left:40px;top:510px;width:216px;height:180px;background:var(--blue)"><b>45/141</b><span>người chọn</span><em>KHÓ GOM ĐỦ<br>NGƯỜI CHƠI</em></div>
+  <div class="stat" style="left:273px;top:510px;width:216px;height:180px;background:var(--blue)"><b>13-19</b><span>lượt chọn, tùy câu hỏi</span><em>NGẠI ĐỌC LUẬT<br>DÀI, KHÓ HIỂU</em></div>
+  <div class="stat" style="left:506px;top:510px;width:216px;height:180px;background:var(--blue)"><b>28</b><span>lượt chọn</span><em>LO GAME NHANH<br>CHÁN, ÍT CHƠI LẠI</em></div>
+  <div class="stat" style="left:40px;top:704px;width:682px;height:80px;background:var(--blue);flex-direction:row;align-items:center;gap:22px;padding:0 20px;text-align:left"><b style="font-size:50px">103/141</b><span style="font-size:15px">người thường chơi ở quán cà phê, trà chanh – nơi cần một trò chơi gọn, dựng nhanh và an toàn trên bàn nhỏ.</span></div>
+  <img class="abs" src="assets/avatar-minh.png" alt="Persona Minh" style="left:985px;top:190px;width:170px;height:170px;border-radius:50%">
+  <div class="abs" style="left:1010px;top:364px;width:120px;background:var(--red);color:var(--yellow);font:700 italic 24px var(--body);text-align:center;padding:2px 0">MINH</div>
+  <div class="personabox"><ul>
+    <li>Bối cảnh: quán cà phê, trà chanh, quán nhậu khi tụ tập nhóm.</li>
+    <li>Động cơ mua: tạo không khí vui; game có chiều sâu, chơi lại được, luật dễ, thiết kế đẹp, chất liệu tốt.</li>
+    <li>Nỗi đau: khó gom đủ người; sợ nhanh chán; ngại luật dài; lo chất lượng, độ bền.</li>
+    <li>Rào cản mua: chất lượng, độ bền; luật dài; mức hứng thú của nhóm (chưa kết luận rào cản giá).</li>
+    <li>Hành vi số: xem review, gameplay, ảnh thật trước khi mua; mua theo cảm hứng.</li></ul>
+    <p class="cr it" style="font-size:17px;margin-top:10px">“Mình sẽ không mua chỉ vì nó đang trending mà mình nghĩ là mình sẽ mua về chơi được bao nhiêu lần.”</p>
+  </div>
+</div></section>
+
+<!-- 6 COMPETITORS -->
+<section class="slide" id="s6" data-title="02. Thị trường – Đối thủ"><div class="stage">
+  <div class="hdr">02. THỊ TRƯỜNG &amp; KHÁCH HÀNG</div>
+  <div class="panel"></div>
+  <div class="abs" style="left:47px;top:200px;width:1344px"><table class="t th-red" style="font-size:19px">
+    <colgroup><col style="width:17%"><col style="width:20%"><col style="width:29%"><col style="width:34%"></colgroup>
+    <tr style="height:78px"><th style="font-size:22px">ĐỐI THỦ</th><th style="font-size:22px">ĐỊNH VỊ</th><th style="font-size:22px">ĐIỂM MẠNH</th><th style="font-size:22px">KHOẢNG TRỐNG CHO ZUI DEE</th></tr>
+    <tr style="height:98px"><td class="c bl">Funky Việt Nam</td><td>Bộ bài party game thử thách, tạo tiếng cười</td><td>Giá dễ tiếp cận; nhiều đầu game; hàng chục nghìn lượt bán trên Shopee</td><td>Chủ yếu câu hỏi, thử thách; ít chiến thuật và lật kèo nên dễ nhàm khi chơi lại</td></tr>
+    <tr style="height:98px"><td class="c bl">VUIDEE Card Game</td><td>Thẻ bài theo chủ đề quen thuộc (vd. Bi-a Dee)</td><td>Chủ đề dễ nhận diện, hình ảnh có màu sắc riêng</td><td>Chủ đề chuyên biệt kén người chơi; chưa có dữ liệu công khai về mua lại, độ bền</td></tr>
+    <tr style="height:98px"><td class="c bl">Board Game Việt</td><td>Cửa hàng board game danh mục rộng</td><td>Danh mục phong phú, nhiều mức giá</td><td>Sản phẩm mới khó nổi bật nếu không có định vị rõ</td></tr>
+  </table></div>
+  <div class="abs cp" style="left:50px;top:618px;font:italic 56px/1.25 var(--display)">VỊ TRÍ<br>ZUI DEE</div>
+  <div class="abs bl" style="left:272px;top:624px;width:908px;height:52px;padding:0 24px;display:flex;align-items:center;font-size:19px">Dễ vào như party game, có chiều sâu nhờ cược + xúc xắc + thẻ lật kèo</div>
+  <div class="abs bl" style="left:272px;top:692px;width:908px;height:92px;padding:0 24px;display:flex;align-items:center;font-size:19px">Không cạnh tranh về giá – chứng minh khác biệt bằng video gameplay thật và trải nghiệm chơi thử tại quán.</div>
+  <a class="qr" href="https://docs.google.com/spreadsheets/d/1tf90laF89zbvcxnS0Z-NWCcjJFfbw4Pi/edit?gid=1214372944#gid=1214372944" target="_blank" rel="noopener" style="left:1222px;top:612px;width:170px"><img src="assets/qr-thitruong.png" alt="QR dữ liệu khảo sát"></a>
+</div></section>
+
+<!-- 7 VALUE PROPOSITION -->
+<section class="slide" id="s7" data-title="03. Đề xuất giá trị"><div class="stage">
+  <div class="hdr">03. ĐỀ XUẤT GIÁ TRỊ &amp; MVP</div>
+  <div class="panel"></div>
+  <div class="abs ttl red it" style="left:40px;width:658px;top:190px;font-size:30px">VALUE PROPOSITION</div>
+  <div class="nl" style="left:40px;top:250px;width:658px;height:396px">
+    <div class="row"><span class="n">01</span><div style="flex:1"><h4>Xóa bỏ rào cản người chơi</h4><p>Nỗi đau: khó gom nhóm đông<br>Giải pháp: chơi mượt từ 2 đến 6 người, không cần nhóm cố định</p></div></div>
+    <div class="row on"><span class="n">02</span><div style="flex:1"><h4>Thiết lập trận đấu nhanh</h4><p>Nỗi đau: ngại đọc luật dài<br>Giải pháp: trải thảm là chơi; quét QR xem video luật 1–2 phút</p></div></div>
+    <div class="row"><span class="n">03</span><div style="flex:1"><h4>Tính chơi lại cao</h4><p>Nỗi đau: lo game nhanh chán<br>Giải pháp: xúc xắc ngẫu nhiên, mini-game phản xạ, Thẻ Độ lật kèo</p></div></div>
+  </div>
+  <div class="abs ttl red it" style="left:711px;width:698px;top:190px;font-size:30px">BẢNG ĐỐI CHIẾU</div>
+  <div class="abs" style="left:711px;top:250px;width:698px"><table class="t th-blue" style="font-size:17px">
+    <colgroup><col style="width:33%"><col style="width:22%"><col style="width:45%"></colgroup>
+    <tr style="height:86px"><th>Nỗi đau thị trường</th><th>Trụ cột đề xuất giá trị</th><th>Giải pháp thực tế</th></tr>
+    <tr style="height:103px"><td>Khó gom đủ nhóm đông người chơi.</td><td>Xóa bỏ rào cản người chơi</td><td>Cơ chế vận hành mượt mà cho 2-6 người, không đòi hỏi nhóm đông cố định.</td></tr>
+    <tr style="height:103px"><td>Ngại đọc luật dài, phức tạp.</td><td>Thiết lập trận đấu nhanh</td><td>Setup 5s, xem Video QR 1–2 phút nhập cuộc ngay lập tức.</td></tr>
+    <tr style="height:103px"><td>Lo game nhanh chán, ít chơi lại.</td><td>Tính chơi lại cao</td><td>Bộ thẻ bài biến thể ngẫu nhiên &amp; mini-game tương tác giúp ván chơi luôn mới.</td></tr>
+  </table></div>
+  <svg class="abs" style="left:45px;top:690px" width="180" height="80" viewBox="0 0 180 80"><path d="M0 26h110V0l70 40-70 40V54H0z" fill="#FD0002"/></svg>
+  <p class="abs" style="left:270px;top:672px;width:1134px;font-size:21px;line-height:1.5;color:var(--blue)"><b class="cp it">Dành cho</b> giới trẻ đang gặp khó khăn khi tổ chức chơi board game <b class="cp it">vì</b> ngại luật cồng kềnh, khó gom nhóm đông và lo game nhanh chán; sản phẩm của Zui Dee <b class="cp it">là</b> dòng Board Game Pocket-size giải trí tương tác cho 2 - 6 người, <b class="cp it">giúp</b> xóa bỏ rào cản người chơi, thiết lập trận đấu nhanh qua Video QR 1-2 phút và mang lại tính chơi lại cao</p>
+</div></section>
+
+<!-- 8 MVP -->
+<section class="slide" id="s8" data-title="03. Thử nghiệm MVP"><div class="stage">
+  <div class="hdr">03. ĐỀ XUẤT GIÁ TRỊ &amp; MVP</div>
+  <div class="panel"></div>
+  <div class="abs ttl red it" style="left:47px;width:691px;top:200px;font-size:30px">THỬ NGHIỆM MVP</div>
+  <div class="abs" style="left:47px;top:258px;width:691px"><table class="t th-blue" style="font-size:14px">
+    <colgroup><col style="width:22%"><col style="width:23%"><col style="width:33%"><col style="width:22%"></colgroup>
+    <tr style="height:70px"><th>Hạng mục chỉ số</th><th>Phân loại tính chất</th><th>Dữ liệu khảo sát thực tế / Ngưỡng thiết lập</th><th>Đánh giá &amp; Kết luận</th></tr>
+    <tr style="height:108px"><td class="cb">Cỡ mẫu &amp; Chân dung khách hàng</td><td class="c b cr it" style="background:var(--yellow)">DỮ LIỆU THỰC TẾ<br>(Đã khảo sát)</td><td class="cb">Thu thập 141 mẫu trực tuyến, 6 phỏng vấn sâu và 32 bình luận đối thủ (25-26/9/2026).</td><td class="cb">Xác nhận nhu cầu thật (Persona rõ ràng)</td></tr>
+    <tr style="height:108px"><td class="cb">Khung giá sẵn sàng chi trả</td><td class="c b cr it" style="background:var(--yellow)">DỮ LIỆU THỰC TẾ<br>(Đã khảo sát)</td><td class="cb">~77% mẫu chấp nhận mức giá 70.000 - 200.000 VNĐ/bộ card game giải trí.</td><td class="cb">Cơ sở định giá chuẩn (200k/bộ)</td></tr>
+    <tr style="height:108px"><td class="cb">Thời gian tiếp thu luật qua QR</td><td class="c b cr it" style="background:var(--yellow)">GIẢ ĐỊNH MÔ PHỎNG (Ngưỡng thử nghiệm)</td><td class="cb">Thiết lập ngưỡng thành công: 100% người chơi hiểu luật &lt; 3 phút qua Video QR ngắn.</td><td class="cb">Kỳ vọng vượt qua rào cản ngại học luật</td></tr>
+    <tr style="height:108px"><td class="cb">Tỷ lệ chuyển đổi đơn hàng (Pre-order)</td><td class="c b cr it" style="background:var(--yellow)">GIẢ ĐỊNH MÔ PHỎNG (Ngưỡng thử nghiệm)</td><td class="cb">Thiết lập mục tiêu: Đạt tối thiểu 20 người để lại SĐT/đặt cọc mua sau khi chơi thử trong 7 ngày.</td><td class="cb">Kiểm chứng ý định mua thực tế</td></tr>
+  </table></div>
+  <div class="abs ttl red it" style="left:770px;width:621px;top:200px;font-size:30px">BÀI HỌC SAU PLAYTEST NỘI BỘ</div>
+  <div class="nl" style="left:770px;top:258px;width:621px;height:512px">
+    <div class="row"><span class="n">01</span><div style="flex:1"><h4>Token: 30 → 48</h4><p>30 token bị chia hết khi chơi 6 người; nay 30 phát cho người chơi, 18 làm Quỹ chung.</p></div></div>
+    <div class="row on"><span class="n">02</span><div style="flex:1"><h4>Mini-game an toàn cho bàn cà phê</h4><p>Bỏ thả xúc xắc rơi tự do (dễ đổ ly); thay bằng đập tay vào thảm hoặc chộp vật ở giữa.</p></div></div>
+    <div class="row"><span class="n">03</span><div style="flex:1"><h4>Đại chúng hóa sản phẩm</h4><p>Không gói trong một trường: tách 2 bản “Học Đại Đi” (sinh viên) và “Làm Đại Đi” (văn phòng, quà B2B).</p></div></div>
+  </div>
+</div></section>
+
+<!-- 9 CANVAS -->
+<section class="slide" id="s9" data-title="04. Mô hình Canvas"><div class="stage">
+  <div class="hdr">04. MÔ HÌNH CANVAS</div>
+  <div class="panel"></div>
+  <div class="cv" style="left:77px;top:221px;width:247px;height:377px"><h5>8. Đối tác chính</h5><ul><li>Xưởng in</li><li>Quán cà phê, CLB board game</li><li>KOC</li><li>Sàn TMĐT</li></ul></div>
+  <div class="cv" style="left:333px;top:221px;width:274px;height:197px"><h5>7. Hoạt động chính</h5><ul><li>R&amp;D, playtest</li><li>Truyền thông - Marketing</li><li>Vận hành, CSKH</li><li>Sản xuất</li></ul></div>
+  <div class="cv" style="left:333px;top:430px;width:274px;height:168px"><h5>6. Nguồn lực chính</h5><ul><li>11 thành viên.</li><li>Vốn góp 5,5 triệu đồng (500k/ng)</li></ul></div>
+  <div class="cv" style="left:619px;top:221px;width:227px;height:377px"><h5 class="alt">2. Giá trị<br>đề xuất</h5><ul><li>Xóa rào cản người chơi (2–6).</li><li>Setup nhanh.</li><li>Tính chơi lại cao.</li></ul></div>
+  <div class="cv" style="left:860px;top:221px;width:274px;height:225px"><h5 class="alt">4. Quan hệ khách hàng</h5><ul style="font-size:16px"><li>Cộng đồng online yêu board game.</li><li>Hỗ trợ &amp; chăm sóc khách hàng.</li><li>Chăm sóc riêng cho B2B.</li></ul></div>
+  <div class="cv" style="left:860px;top:458px;width:274px;height:140px"><h5 class="alt">3. Kênh</h5><ul style="font-size:16px"><li>TikTok, Facebook</li><li>Shopee, TikTok Shop</li><li>Playtest tại quán, CLB</li></ul></div>
+  <div class="cv" style="left:1146px;top:221px;width:213px;height:377px"><h5 class="alt">1. Phân khúc</h5><ul><li>Gen Z, sinh viên tìm kiếm hoạt động giải trí trực tiếp giá rẻ.</li><li>Dân văn phòng, doanh nghiệp làm quà.</li></ul></div>
+  <div class="cv" style="left:77px;top:614px;width:634px;height:150px;font-size:16px;line-height:1.4"><h5>9. Cơ cấu chi phí</h5><ul><li>Sản xuất: In ấn, đóng gói.</li><li>Marketing: Booking KOL, KOC, quảng cáo.</li><li>R&amp;D: Thử nghiệm sản phẩm.</li><li>Vận hàng: Lưu kho và phân loại.</li></ul></div>
+  <div class="cv" style="left:729px;top:614px;width:630px;height:150px"><h5>5. Dòng doanh thu</h5><ul><li>Bán lẻ bộ game 200.000 đ (B2C)</li><li>Bản mở rộng, combo quà tặng; đơn doanh nghiệp</li></ul></div>
+</div></section>
+
+<!-- 10 PRICING -->
+<section class="slide" id="s10" data-title="05. Căn cứ định giá"><div class="stage">
+  <div class="hdr">05. DOANH THU, ĐỊNH GIÁ &amp; KINH TẾ ĐƠN VỊ</div>
+  <div class="panel"></div>
+  <div class="abs pk" style="left:59px;top:182px;width:976px;height:78px;display:flex;align-items:center;justify-content:center;gap:24px"><span style="font-size:20px;line-height:1.2">Zui Dee áp<br>dụng mô hình</span><span style="font:44px var(--display)">BÁN MỘT LẦN</span></div>
+  <div class="abs" style="left:59px;top:280px;width:976px"><table class="t th-yel" style="font-size:19px">
+    <colgroup><col style="width:26%"><col style="width:34%"><col style="width:40%"></colgroup>
+    <tr style="height:62px"><th style="color:var(--red);font-size:22px">Căn cứ</th><th style="color:var(--red);font-size:22px">Con số</th><th style="color:var(--red);font-size:22px">Nguồn và nhận xét</th></tr>
+    <tr style="height:90px"><td>Sàn (chi phí biến đổi)</td><td>183.000 đồng/bộ</td><td>Linh kiện, đóng gói 153.000 đồng + phí sàn 15% (30.000 đồng).</td></tr>
+    <tr style="height:120px"><td>Tham chiếu (đối thủ)</td><td>Phân khúc bán chạy 50.000-100.000 đồng</td><td>Các bộ bài party game trong nước. Zui Dee có thêm thảm canvas, xúc xắc, token nên cấu trúc vật liệu khác bộ bài thuần.</td></tr>
+    <tr style="height:90px"><td>Trần (khách sẵn lòng trả)</td><td>Hai khoảng 70.000-120.000 và 121.000-200.000 đồng</td><td>Kết quả khảo sát persona.</td></tr>
+    <tr style="height:90px"><td>Giá chọn</td><td>200.000 đồng/bộ</td><td>Ở khoảng sẵn lòng trả và cao hơn phân khúc bán chạy.</td></tr>
+  </table></div>
+  <div class="abs ttl it" style="left:59px;width:976px;top:748px;font-size:34px">CĂN CỨ ĐỊNH GIÁ</div>
+  <a class="qr" href="https://docs.google.com/spreadsheets/d/1OgGc76aAgeWJv0QS4G96mJgdJGyOPKlY/edit?rtpof=true&gid=96810969#gid=96810969" target="_blank" rel="noopener" style="left:1072px;top:176px;width:306px"><img src="assets/qr-taichinh.png" alt="QR bảng tài chính 12 tháng"></a>
+  <div class="abs ttl it" style="left:1062px;width:326px;top:510px;font-size:36px;line-height:1.3">BẢNG TÀI CHÍNH<br>12 THÁNG</div>
+</div></section>
+
+<!-- 11 UNIT ECONOMICS -->
+<section class="slide" id="s11" data-title="05. Kinh tế đơn vị"><div class="stage">
+  <div class="hdr">05. DOANH THU, ĐỊNH GIÁ &amp; KINH TẾ ĐƠN VỊ</div>
+  <div class="panel"></div>
+  <div class="abs it b cb" style="left:16px;width:570px;top:196px;text-align:center;font-size:20px">CHI PHÍ BIẾN ĐỔI CHO MỘT BỘ GAME</div>
+  <div class="abs" style="left:16px;top:236px;width:570px"><table class="t th-red" style="font-size:15px">
+    <colgroup><col style="width:40%"><col style="width:29%"><col style="width:31%"></colgroup>
+    <tr style="height:42px"><th>Khoản</th><th>Số tiền (đồng)</th><th>Tỷ trọng giá bán</th></tr>
+    <tr><td>Thẻ Deadline</td><td class="r">37.000</td><td class="r">18,50%</td></tr>
+    <tr><td>Thẻ Độ</td><td class="r">37.000</td><td class="r">18,50%</td></tr>
+    <tr><td>Token cược</td><td class="r">27.000</td><td class="r">13,50%</td></tr>
+    <tr><td>Thảm canvas (map)</td><td class="r">20.000</td><td class="r">10,00%</td></tr>
+    <tr><td>Xúc xắc</td><td class="r">15.000</td><td class="r">7,50%</td></tr>
+    <tr><td>Sách luật</td><td class="r">10.000</td><td class="r">5,00%</td></tr>
+    <tr><td>Thư cảm ơn</td><td class="r">5.000</td><td class="r">2,50%</td></tr>
+    <tr><td>Hộp đóng gói</td><td class="r">2.000</td><td class="r">1,00%</td></tr>
+    <tr class="b"><td>Cộng linh kiện, đóng gói</td><td class="r">153.000</td><td class="r">76,50%</td></tr>
+    <tr><td>Phí sàn 15%</td><td class="r">30.000</td><td class="r">15,00%</td></tr>
+    <tr class="b"><td>Tổng chi phí biến đổi</td><td class="r">183.000</td><td class="r">91,50%</td></tr>
+  </table></div>
+  <div class="abs" style="left:600px;width:340px;top:250px;text-align:center;color:var(--ink)">
+    <div style="font:italic 38px var(--display);color:var(--blue)">LTV</div>
+    <div style="font-size:12px">Lãi góp × Số lần mua mỗi tháng × Số tháng giữ chân</div>
+    <div style="font-size:17px">17.000 × 0,1 × 12 = <b class="cr">20.400 đồng</b>.</div>
+    <div style="font:italic 38px var(--display);color:var(--blue);margin-top:66px">CAC</div>
+    <div style="font-size:12px">Ngân sách truyền thông ÷ Khách mới</div>
+    <div style="font-size:17px">300.000 ÷ 30 = <b class="cr">10.000 đồng.</b></div>
+    <div style="font:italic 38px var(--display);color:var(--blue);margin-top:66px">LTV/CAC</div>
+    <div style="font-size:17px">LTV/CAC = 20.400 ÷ 10.000 = <b class="cr">2,04</b></div>
+    <div style="font-size:12px">“có lời nhưng chưa an toàn”.</div>
+  </div>
+  <div class="abs it b cb" style="left:959px;width:468px;top:196px;text-align:center;font-size:20px">CAC THEO TỪNG GIAI ĐOẠN</div>
+  <div class="abs" style="left:959px;top:236px;width:468px"><table class="t th-red" style="font-size:16px">
+    <colgroup><col style="width:34%"><col style="width:26%"><col style="width:19%"><col style="width:21%"></colgroup>
+    <tr style="height:76px"><th>Giai đoạn</th><th>Chi truyền thông</th><th>Khách mới</th><th>CAC (đồng)</th></tr>
+    <tr style="height:74px"><td>Tháng 1 (11/2026)</td><td class="c">300.000</td><td class="c">30</td><td class="c">10.000</td></tr>
+    <tr style="height:74px"><td>Tháng 2 (12/2026)</td><td class="c">500.000</td><td class="c">90</td><td class="c">5.556</td></tr>
+    <tr style="height:74px"><td>Tháng 3 (01/2027)</td><td class="c">1.500.000</td><td class="c">150</td><td class="c">10.000</td></tr>
+    <tr style="height:74px"><td>3 tháng đầu, cộng chi phí demo test</td><td class="c">2.390.000</td><td class="c">270</td><td class="c">8.852</td></tr>
+    <tr style="height:74px"><td>Cả năm (không gồm khởi sự)</td><td class="c">14.300.000</td><td class="c">3.840</td><td class="c">3.724</td></tr>
+  </table></div>
+</div></section>
+
+<!-- 12 SENSITIVITY -->
+<section class="slide" id="s12" data-title="05. Lãi góp & hòa vốn"><div class="stage">
+  <div class="hdr">05. DOANH THU, ĐỊNH GIÁ &amp; KINH TẾ ĐƠN VỊ</div>
+  <div class="panel"></div>
+  <div class="abs ttl it" style="left:0;width:1440px;top:184px;font-size:26px">LÃI GÓP VÀ ĐIỂM HÒA VỐN KHI THAY ĐỔI GIÁ, CHI PHÍ</div>
+  <div class="abs" style="left:99px;top:232px;width:1246px"><table class="t th-gold" style="font-size:16px">
+    <colgroup><col style="width:44%"><col style="width:19%"><col style="width:18%"><col style="width:19%"></colgroup>
+    <tr style="height:82px"><th>Tình huống</th><th>Chi phí biến đổi (đồng)</th><th>Lãi góp (đồng/bộ)</th><th>Hòa vốn CPCĐ (bộ/tháng)</th></tr>
+    <tr style="height:74px;background:var(--rose)" class="cr it b"><td style="font-size:19px">Cơ sở: giá 200.000, linh kiện 153.000, phí sàn 15%</td><td class="r" style="font-size:19px">183.000</td><td class="r" style="font-size:19px">17.000</td><td class="r" style="font-size:19px">42</td></tr>
+    <tr style="background:var(--rose)"><td>Linh kiện tăng 10% (168.300)</td><td class="r">198.300</td><td class="r">1.700</td><td class="r">412</td></tr>
+    <tr><td>Phí sàn tăng lên 20%</td><td class="r">193.000</td><td class="r">7.000</td><td class="r">100</td></tr>
+    <tr style="background:var(--rose)"><td>Đối thủ hạ giá, Zui Dee giảm theo 20% (160.000)</td><td class="r">177.000</td><td class="r">−17.000</td><td class="r">Không hòa vốn</td></tr>
+    <tr><td>Bán trực tiếp qua fanpage, không phí sàn</td><td class="r">153.000</td><td class="r">47.000</td><td class="r">15</td></tr>
+    <tr style="background:var(--mint)"><td>Linh kiện giảm còn 80.000 khi in lô ≥ 100 bộ (mục tiêu)</td><td class="r">117.000</td><td class="r">83.000</td><td class="r">9</td></tr>
+  </table></div>
+  <div class="abs cr" style="left:96px;top:618px;font:140px/1 var(--display)">3</div>
+  <div class="abs cr it" style="left:186px;top:648px;font:italic 46px/1.25 var(--display)">hành động<br>ưu tiên</div>
+  <div class="abs bl c" style="left:477px;top:630px;width:864px;height:40px;line-height:40px;font-size:17px">Đàm phán 2 xưởng in: Đưa linh kiện về dưới 80.000 đ/bộ khi in lô từ 100 bộ.</div>
+  <div class="abs bl c" style="left:477px;top:684px;width:864px;height:40px;line-height:40px;font-size:17px">Tinh gọn cấu trúc: In token và Thẻ Độ chung tờ; thay sách luật bằng thẻ QR – giữ chất lượng vật liệu.</div>
+  <div class="abs bl c" style="left:477px;top:738px;width:864px;height:40px;line-height:40px;font-size:17px">Tăng bán trực tiếp: Qua fanpage và điểm playtest để giảm phí sàn.</div>
+</div></section>
+
+<!-- 13 OPERATIONS -->
+<section class="slide" id="s13" data-title="06. Vận hành – Quy trình"><div class="stage">
+  <div class="hdr">06. VẬN HÀNH, TỔ CHỨC, PHÁP LÝ</div>
+  <div class="panel"></div>
+  <div class="abs ttl" style="left:0;width:1440px;top:200px;font-size:30px">QUY TRÌNH 6 BƯỚC, CÔNG SUẤT 20 ĐƠN/ NGÀY NGHẼN Ở KHÂU GIAO</div>
+  <div class="step" style="left:99px;top:270px;height:184px"><b>1</b><strong>Thu hút</strong>Không giới hạn<br><i>Marketing</i></div>
+  <div class="step" style="left:310px;top:270px;height:184px"><b>2</b><strong>Chốt đơn</strong>30-50 đơn/ngày<br><i>Vận hành</i></div>
+  <div class="step" style="left:518px;top:270px;height:184px"><b>3</b><strong>Đóng bộ</strong>12-20 đơn/ngày<br><i>Vận hành</i></div>
+  <div class="step hot" style="left:729px;top:270px;height:184px"><b>4</b><strong>Giao hàng</strong>20 đơn/ngày<br><b style="font-size:19px;display:inline">Điểm nghẽn</b><br><i>Vận hành</i></div>
+  <div class="step" style="left:940px;top:270px;height:184px"><b>5</b><strong>Đối soát</strong>Không giới hạn<br><i>Tài chính</i></div>
+  <div class="step" style="left:1148px;top:270px;height:184px"><b>6</b><strong>Chăm sóc</strong>33040 đơn/ngày<br><i>Vận hành, CSKH</i></div>
+  <div class="abs pk" style="left:99px;top:472px;width:1242px;height:68px;border-radius:14px;padding:8px 20px;font-size:17px;line-height:1.35">Nâng lên 40 đơn/ngày trước tháng 7: Giao qua đơn vị vận chuyển của sàn. Đóng bộ sẵn lô 50 bộ cuối tuần. Thêm 2 người vào cao điểm (tháng 12, tháng 8)</div>
+  <div class="gcard" style="left:99px;top:563px;width:288px;height:139px"><b>Xưởng in</b><strong>Cần:</strong> Đơn ổn định, file chuẩn<br><strong>Cho dự án:</strong> Thẻ, thảm sắc nét, giá tốt</div>
+  <div class="gcard" style="left:414px;top:563px;width:288px;height:139px"><b>Quán cà phê</b><strong>Cần:</strong> Sản phẩm mới hút khách<br><strong>Cho dự án:</strong> Điểm chơi thử đúng persona</div>
+  <div class="gcard" style="left:729px;top:563px;width:288px;height:139px"><b>KOC Gen Z</b><strong>Cần:</strong> Game dễ quay, quà, phí<br><strong>Cho dự án:</strong> Video game play thật</div>
+  <div class="gcard" style="left:1042px;top:563px;width:299px;height:139px"><b>Khách hàng</b><strong>Cần:</strong> Game vui, giao đúng hẹn<br><strong>Cho dự án:</strong> Doanh thu, phản hồi UGC</div>
+</div></section>
+
+<!-- 14 STAKEHOLDERS -->
+<section class="slide" id="s14" data-title="06. Các bên liên quan"><div class="stage">
+  <div class="hdr">06. VẬN HÀNH, TỔ CHỨC, PHÁP LÝ</div>
+  <div class="panel"></div>
+  <div class="abs ttl red" style="left:0;width:1440px;top:180px;font-size:30px">QUẢN TRỊ CÁC BÊN LIÊN QUAN</div>
+  <div class="abs" style="left:6px;top:226px;width:1428px"><table class="t th-yel cb" style="font-size:19px">
+    <colgroup><col style="width:19.5%"><col style="width:24.5%"><col style="width:26%"><col style="width:30%"></colgroup>
+    <tr style="height:62px"><th style="font-size:22px">Bên liên quan</th><th style="font-size:22px">Họ cần</th><th style="font-size:22px">Dự án cần</th><th style="font-size:22px">Cách làm việc</th></tr>
+    <tr style="height:94px"><td>Xưởng in</td><td>Đơn ổn định, file in chuẩn, thanh toán đúng hạn</td><td>Thẻ, thảm sắc nét, bền; giao đúng hẹn; giá tốt khi in lô lớn</td><td>Thỏa thuận bằng văn bản về chất liệu, duyệt bản in mẫu, lịch giao</td></tr>
+    <tr style="height:94px"><td>Quán cà phê board game</td><td>Sản phẩm mới thu hút khách, không tốn chi phí</td><td>Điểm chơi thử, tiếp cận đúng persona</td><td>Đặt bộ demo miễn phí, kèm mã QR mua hàng; báo trước lịch playtest</td></tr>
+    <tr style="height:112px"><td>KOC Gen Z</td><td>Game dễ quay, luật đơn giản, quà hoặc phí hợp tác</td><td>Video review gameplay thật</td><td>Gửi bộ game, để KOC tự sáng tạo; yêu cầu ghi rõ nội dung hợp tác quảng cáo</td></tr>
+    <tr style="height:112px"><td>Khách hàng cá nhân</td><td>Game vui, bền, luật dễ; giao đúng hẹn</td><td>Doanh thu, phản hồi, nội dung UGC</td><td>Hỗ trợ luật qua video, tin nhắn; xử lý đổi trả trong 7 ngày nếu lỗi in</td></tr>
+    <tr style="height:100px"><td>Nhóm sáng lập (11 người)</td><td>Công bằng về quyền lợi, rõ việc</td><td>Thời gian, cam kết, vốn góp</td><td>Thỏa thuận sáng lập một trang, cả nhóm ký.</td></tr>
+  </table></div>
+</div></section>
+
+<!-- 15 ORG / RACI -->
+<section class="slide" id="s15" data-title="06. Tổ chức & RACI"><div class="stage">
+  <div class="hdr">06. VẬN HÀNH, TỔ CHỨC, PHÁP LÝ</div>
+  <div class="panel"></div>
+  <div class="abs ttl red" style="left:0;width:1440px;top:186px;font-size:30px">SƠ ĐỒ TỔ CHỨC VÀ RACI: MỖI VIỆC ĐÚNG 1 NGƯỜI CHỊU TRÁCH NHIỆM</div>
+  <div class="org" style="left:99px;top:240px;height:144px"><b>Trưởng nhóm</b>Ái Nhân<br><i>Điều phối, pháp lý, B2B</i></div>
+  <div class="org" style="left:310px;top:240px;height:144px"><b>R&amp;D Game</b>Thoại <i>(lead)</i><br>Dung</div>
+  <div class="org" style="left:518px;top:240px;height:144px"><b>Game Designer</b>Uyên Lan <i>(lead)</i><br>Bảo Nguyên</div>
+  <div class="org" style="left:725px;top:240px;height:144px"><b>Marketing</b>Quân <i>(lead)</i><br>Bảo Nhi</div>
+  <div class="org" style="left:936px;top:240px;height:144px"><b>Tài chính</b>Giang <i>(lead)</i><br>Vũ Nhân</div>
+  <div class="org" style="left:1146px;top:240px;height:144px;width:199px"><b>Vận hành, CSKH</b>Vũ Hà <i>(lead)</i><br>Phương Phương</div>
+  <div class="abs" style="left:99px;top:402px;width:1246px"><table class="t th-pink" style="font-size:16px">
+    <colgroup><col style="width:40%"><col span="6" style="width:10%"></colgroup>
+    <tr style="height:44px"><th style="font-size:20px">VIỆC</th><th>TN</th><th>RRD</th><th>DESIGN</th><th>MKT</th><th>TC</th><th>VH</th></tr>
+    <tr style="height:46px"><td>Thiết kế, play test game play.</td><td class="c">C</td><td class="c">A, R</td><td class="c">R</td><td class="c">C</td><td class="c">I</td><td class="c">C</td></tr>
+    <tr style="height:46px"><td>Chốt mẫu in, làm việc với xưởng</td><td class="c">B</td><td class="c">C</td><td class="c">A, R</td><td class="c">I</td><td class="c">C</td><td class="c">R</td></tr>
+    <tr style="height:46px"><td>Truyền thông, Tiktok</td><td class="c">C</td><td class="c">I</td><td class="c">C</td><td class="c">A, R</td><td class="c">C</td><td class="c">I</td></tr>
+    <tr style="height:46px"><td>Gian hàng TMĐT, đóng gói, giao</td><td class="c">I</td><td class="c">I</td><td class="c">I</td><td class="c">C</td><td class="c">I</td><td class="c">A, R</td></tr>
+    <tr style="height:46px"><td>Vốn, ngân sách, báo cáo</td><td class="c">C</td><td class="c">I</td><td class="c">I</td><td class="c">I</td><td class="c">A, R</td><td class="c">I</td></tr>
+    <tr style="height:46px"><td>Đối tác quán cà phê, kênh B2B</td><td class="c">A, R</td><td class="c">I</td><td class="c">I</td><td class="c">C</td><td class="c">C</td><td class="c">R</td></tr>
+  </table></div>
+  <div class="abs cb it c" style="left:0;width:1440px;top:744px;font-size:17px;line-height:1.5">R: Thực hiện &nbsp;A: Chịu trách nhiệm cuối cùng &nbsp;C: Được hỏi ý kiến &nbsp;I: Được thông báo<br>Mỗi người có vai chính, vai phụ, cam kết 12 - 15 giờ/tuần.</div>
+</div></section>
+
+<!-- 16 LEGAL -->
+<section class="slide smh" id="s16" data-title="06. Pháp lý"><div class="stage">
+  <div class="hdr sm">06. VẬN HÀNH, TỔ CHỨC, PHÁP LÝ</div>
+  <div class="panel" style="top:130px"></div>
+  <div class="abs ttl red" style="left:0;width:1440px;top:162px;font-size:30px">HÌNH THỨC PHÁP LÝ HAI BƯỚC, RÀNG BUỘC BẰNG THỎA THUẬN SÁNG LẬP</div>
+  <div class="pill" style="left:300px;top:226px;width:166px">THÁNG 1-12</div>
+  <div class="box bl b c" style="left:94px;top:280px;width:572px;height:96px;display:flex;align-items:center;justify-content:center;font-size:21px">Hộ kinh doanh do 1 thành viên đại diện đăng ký</div>
+  <div class="pill" style="left:276px;top:404px;width:214px">CUỐI THÁNG 12</div>
+  <div class="box bl b c" style="left:94px;top:458px;width:572px;height:96px;display:flex;align-items:center;justify-content:center;font-size:21px">Xem xét lên công ty TNHH 2 thành viên trở lên</div>
+  <div class="pill" style="left:888px;top:226px;width:304px">THỎA THUẬN SÁNG LẬP</div>
+  <div class="box pk" style="left:720px;top:280px;width:640px;height:98px;font-size:18px;line-height:1.4"><b>Góp vốn, góp công:</b> Góp đều 500.000 đồng/người. Lợi nhuận chia theo mức hoàn thành nhiệm vụ được, xét mỗi quý.</div>
+  <div class="box pk" style="left:720px;top:394px;width:640px;height:94px;font-size:18px;line-height:1.4"><b>Cam kết thời gian:</b> tối thiểu 12 giờ/tuần; tham gia đủ họp giao ban và các buổi playtest.</div>
+  <div class="box pk" style="left:720px;top:504px;width:640px;height:126px;font-size:18px;line-height:1.4"><b>Ra quyết định:</b> việc vận hành trong team do Leader quyết; khoản chi trên 1.000.000 đồng hoặc thay đổi giá bán cần ít nhất 8/11 thành viên đồng ý.</div>
+  <div class="box pk" style="left:720px;top:646px;width:640px;height:132px;font-size:18px;line-height:1.4"><b>Khi có người rời nhóm:</b> rút trước 6 tháng thì nhận lại vốn góp theo giá trị sổ sách; toàn bộ thiết kế, bộ luật game thuộc về dự án.</div>
+</div></section>
+
+<!-- 17 COMMS MESSAGE -->
+<section class="slide" id="s17" data-title="07. Truyền thông – Thông điệp"><div class="stage">
+  <div class="hdr">07. TRUYỀN THÔNG</div>
+  <div class="panel"></div>
+  <div class="abs" style="left:81px;top:214px;font:30px var(--display);color:var(--blue)">THÔNG ĐIỆP CỐT LÕI: <span class="cr">“DỄ DÀNG BẮT ĐẦU - TRỌN VẸN CUỘC VUI.”</span></div>
+  <div class="box yel" style="left:81px;top:276px;width:994px;height:140px;font-size:21px;line-height:1.55">Dành cho <b class="cr">sinh viên Gen Z hay tụ tập ở quán cà phê</b>, đang ngại luật dài, khó gom nhóm và sợ nhanh chán. Zui Dee là <b class="cr">board game cược điểm bỏ túi cho 2 - 6 người</b>, giúp học luật trong 60 giây và mỗi ván một khác.</div>
+  <div class="box pk c" style="left:81px;top:440px;width:306px;height:88px;font-size:18px"><b style="font-size:22px">Dễ hiểu</b><br>Xem trong 60s là chơi được</div>
+  <div class="box pk c" style="left:410px;top:440px;width:333px;height:88px;font-size:18px;padding:14px 10px"><b style="font-size:22px">Set up nhanh</b><br>Trải thảm, đặt cược, lắc xúc xắc</div>
+  <div class="box pk c" style="left:767px;top:440px;width:308px;height:88px;font-size:18px;padding:14px 10px"><b style="font-size:22px">Tiện lợi</b><br>Bỏ túi, 2-6 người, chơi ở quán</div>
+  <div class="box gr c" style="left:81px;top:570px;width:265px;height:170px;font-size:18px"><b style="font-size:22px">Giọng điệu</b><br>Vui, gần gũi, “meme” đời sinh viên.</div>
+  <div class="box rd" style="left:369px;top:570px;width:706px;height:170px;font-size:18px;line-height:1.45"><b style="font-size:22px;display:block;text-align:center">Những điều không nói</b>Không dùng từ tuyệt đối (“số 1”, “tốt nhất”), không công bố số liệu chưa đo, không gợi liên tưởng cờ bạc khi nói về cơ chế cược (token chỉ là điểm trong trò chơi).</div>
+  <div class="abs ttl" style="left:1120px;width:280px;top:282px;font-size:28px;line-height:1.4">NGÂN SÁCH TRUYỀN THÔNG ZUI DEE</div>
+  <a class="qr" href="https://docs.google.com/spreadsheets/d/1GxQYqdqwxYCQ2Y0-C8N4Q4_y9uIHGgiJhEXitZHUZp4/edit?gid=1024123188#gid=1024123188" target="_blank" rel="noopener" style="left:1160px;top:385px;width:200px"><img src="assets/qr-truyenthong.png" alt="QR ngân sách truyền thông"><div class="lnk cb">(CLICK VÀO ĐÂY)</div></a>
+</div></section>
+
+<!-- 18 COMMS CHANNELS -->
+<section class="slide" id="s18" data-title="07. Truyền thông – Kênh & ngân sách"><div class="stage">
+  <div class="hdr">07. TRUYỀN THÔNG</div>
+  <div class="panel"></div>
+  <div class="abs ttl" style="left:0;width:1440px;top:200px;font-size:30px">KÊNH, LỊCH VÀ NGÂN SÁCH 3 THÁNG: 30 BÀI, 2,39 TRIỆU ĐỒNG</div>
+  <div class="box yel" style="left:90px;top:268px;width:306px;height:150px;font-size:18px;line-height:1.35"><b>Biết đến</b><br>TikTok, KOC, quảng cáo TikTok<br><b>Paid, Shared</b></div>
+  <div class="box yel" style="left:410px;top:268px;width:301px;height:150px;font-size:18px;line-height:1.35"><b>Cân nhắc</b><br>Fanpage, video game play, play test tại quán<br><b>Owned, Earned</b></div>
+  <div class="box yel" style="left:729px;top:268px;width:301px;height:150px;font-size:18px;line-height:1.35"><b>Mua lần đầu</b><br>Shopee, TikTok Shop, Fanpage<br><b>Owned, Paid</b></div>
+  <div class="box yel" style="left:1048px;top:268px;width:298px;height:150px;font-size:18px;line-height:1.35"><b>Mua lại, giới thiệu</b><br>UGC, combo, giới thiệu bạn bè<br><b>Shared, Earned</b></div>
+  <div class="abs" style="left:90px;top:444px;width:1256px"><table class="t th-red" style="font-size:16px">
+    <colgroup><col style="width:12.6%"><col style="width:9.3%"><col style="width:42.5%"><col style="width:21.9%"><col style="width:13.7%"></colgroup>
+    <tr style="height:40px"><th>THÁNG</th><th>SỐ BÀI</th><th>BÀI CHÍNH</th><th>MỤC TIÊU</th><th>NGÂN SÁCH</th></tr>
+    <tr style="height:70px"><td>11/2026</td><td class="c">11</td><td>Ra mắt (07/11), un boxing, clip luật 60 giây, infographic luật</td><td class="c">Nhận biết; 30 đơn đặt trước</td><td class="c">300.000</td></tr>
+    <tr style="height:70px"><td>12/2026</td><td class="c">11</td><td>Thử thách set up 3 phút, chuỗi play test, đếm ngược, mở bán 23/12</td><td class="c">Niềm tin, mở bán; 90 đơn</td><td class="c">500.000</td></tr>
+    <tr style="height:70px"><td>1/2027</td><td class="c">8</td><td>Thử thách năm mới, rủ hội lập team, UGC, bài chuyển đổi</td><td class="c">Giữ chân, UGC; 150 đơn</td><td class="c">1.500.000</td></tr>
+  </table></div>
+  <div class="abs cb c" style="left:0;width:1440px;top:718px;font-size:19px;line-height:1.5">Ba kênh trọng tâm: TikTok (Persona xem review), fanpage (bán trực tiếp, không phí sàn), Shopee (chốt đơn).<br>Tổng 2.390.000đ gồm 90.000đ demo khởi sự. Lãi góp còn lại sau CAC: 8.148đ/ bộ.</div>
+</div></section>
+
+<!-- 19 FINANCE -->
+<section class="slide smh" id="s19" data-title="08. Tài chính – Dòng tiền"><div class="stage">
+  <div class="hdr sm">08. TÀI CHÍNH VÀ HUY ĐỘNG VỐN</div>
+  <div class="panel" style="top:110px"></div>
+  <div class="abs ttl" style="left:60px;width:476px;top:118px;font-size:24px">VỐN KHỞI SỰ</div>
+  <div class="box yel" style="left:81px;top:154px;width:454px;height:126px;font-size:12.5px;line-height:1.5;color:var(--blue)">
+    <div style="display:flex;font-size:17px;font-weight:700"><span style="flex:1">Chi phí khởi sự</span><span>2.810.000 đ</span></div>
+    <div style="display:flex;gap:10px"><span style="flex:1">Chuẩn bị lô thử nghiệm: thẻ Deadline, thẻ Độ, token, xúc xắc, sách luật, hộp (2 đợt thử nghiệm)</span><span>2.720.000 đ</span></div>
+    <div style="display:flex"><span style="flex:1">Demo test, thu thập phản hồi</span><span>90.000 đ</span></div>
+    <div style="display:flex"><span style="flex:1">Thiết kế truyền thông (thành viên tự làm)</span><span>0 đ</span></div>
+  </div>
+  <div class="abs ttl" style="left:60px;width:496px;top:302px;font-size:24px;line-height:1.3">CHI PHÍ CỐ ĐỊNH, BIẾN ĐỔI<br>VÀ TRUYỀN THÔNG</div>
+  <div class="box yel" style="left:81px;top:380px;width:454px;height:152px;font-size:12.5px;line-height:1.45;color:var(--blue)">
+    <div style="font-size:17px;font-weight:700;text-align:center;margin-bottom:4px">Chi phí cố định, biến đổi và truyền thông</div>
+    <ul style="padding-left:16px"><li><b>Chi phí cố định:</b> 700.000 đ/tháng (Adobe). Các thành viên nhóm khởi nghiệp không nhận lương trong năm đầu.</li><li><b>Chi phí biến đổi:</b> 183.000 đ/bộ.</li><li><b>Truyền thông:</b> tổng 14.300.000 đ/năm, phân bổ theo hoạt động từng tháng.</li></ul>
+  </div>
+  <img class="abs" src="assets/chart-dongtien.png" alt="Biểu đồ dòng tiền lũy kế" style="left:54px;top:548px;width:530px">
+  <div class="abs ttl red" style="left:671px;width:751px;top:118px;font-size:24px">DỰ BÁO DOANH THU VÀ DÒNG TIỀN 12 THÁNG</div>
+  <div class="abs" style="left:671px;top:160px;width:751px"><table class="t th-blue" style="font-size:13px">
+    <tr style="height:52px"><th>Tháng</th><th>Bán/ ngày</th><th>Bán/ tháng</th><th>Doanh thu</th><th>CP biến đổi</th><th>CP cố định</th><th>Truyền thông</th><th>Dòng tiền tháng</th><th>Lũy kế</th></tr>
+    <tr><td class="c">0</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="r">-2.810</td><td class="r">-2.810</td></tr>
+    <tr><td>1 (11/26)</td><td class="c">1</td><td class="c">30</td><td class="r">6.000</td><td class="r">5.490</td><td class="r">700</td><td class="r">300</td><td class="r">-490</td><td class="r">-3.300</td></tr>
+    <tr><td>2 (12/26)</td><td class="c">3</td><td class="c">90</td><td class="r">18.000</td><td class="r">16.470</td><td class="r">700</td><td class="r">500</td><td class="r">330</td><td class="r">-2.970</td></tr>
+    <tr><td>3 (01/27)</td><td class="c">5</td><td class="c">150</td><td class="r">30.000</td><td class="r">27.450</td><td class="r">700</td><td class="r">1.500</td><td class="r">350</td><td class="r">-2.620</td></tr>
+    <tr><td>4 (02/27)</td><td class="c">7</td><td class="c">210</td><td class="r">42.000</td><td class="r">38.430</td><td class="r">700</td><td class="r">1.500</td><td class="r">1.370</td><td class="r">-1.250</td></tr>
+    <tr><td>5 (03/27)</td><td class="c">8</td><td class="c">240</td><td class="r">48.000</td><td class="r">43.920</td><td class="r">700</td><td class="r">1.000</td><td class="r">2.380</td><td class="r">1.130</td></tr>
+    <tr><td>6 (04/27)</td><td class="c">10</td><td class="c">300</td><td class="r">60.000</td><td class="r">54.900</td><td class="r">700</td><td class="r">1.000</td><td class="r">3.400</td><td class="r">4.530</td></tr>
+    <tr><td>7 (05/27)</td><td class="c">12</td><td class="c">360</td><td class="r">72.000</td><td class="r">65.880</td><td class="r">700</td><td class="r">1.000</td><td class="r">4.420</td><td class="r">8.950</td></tr>
+    <tr><td>8 (06/27)</td><td class="c">15</td><td class="c">450</td><td class="r">90.000</td><td class="r">82.350</td><td class="r">700</td><td class="r">1.500</td><td class="r">5.450</td><td class="r">14.400</td></tr>
+    <tr><td>9 (07/27)</td><td class="c">15</td><td class="c">450</td><td class="r">90.000</td><td class="r">82.350</td><td class="r">700</td><td class="r">1.500</td><td class="r">5.450</td><td class="r">19.850</td></tr>
+    <tr><td>10 (08/27)</td><td class="c">15</td><td class="c">450</td><td class="r">90.000</td><td class="r">82.350</td><td class="r">700</td><td class="r">1.000</td><td class="r">5.950</td><td class="r">25.800</td></tr>
+    <tr><td>11 (09/27)</td><td class="c">17</td><td class="c">510</td><td class="r">102.000</td><td class="r">93.330</td><td class="r">700</td><td class="r">1.500</td><td class="r">6.470</td><td class="r">32.270</td></tr>
+    <tr><td>12 (10/27)</td><td class="c">20</td><td class="c">600</td><td class="r">120.000</td><td class="r">109.800</td><td class="r">700</td><td class="r">2.000</td><td class="r">7.500</td><td class="r">39.770</td></tr>
+    <tr class="b"><td>Cả năm</td><td></td><td class="c">3.840</td><td class="r">768.000</td><td class="r">702.720</td><td class="r">8.400</td><td class="r">14.300</td><td class="r">42.580</td><td class="r">133.750</td></tr>
+  </table></div>
+</div></section>
+
+<!-- 20 SCENARIOS & FUNDING -->
+<section class="slide smh" id="s20" data-title="08. Kịch bản & huy động vốn"><div class="stage">
+  <div class="hdr sm">08. TÀI CHÍNH VÀ HUY ĐỘNG VỐN</div>
+  <div class="panel" style="top:110px"></div>
+  <div class="abs ttl red" style="left:81px;width:886px;top:140px;font-size:26px">SO SÁNH BA KỊCH BẢN</div>
+  <div class="abs" style="left:81px;top:186px;width:886px"><table class="t th-blue" style="font-size:18px">
+    <colgroup><col style="width:14%"><col style="width:10%"><col style="width:19%"><col style="width:13%"><col style="width:11%"><col style="width:15%"><col style="width:18%"></colgroup>
+    <tr style="height:84px"><th>Kịch bản</th><th>Hệ số</th><th>Doanh thu 12 tháng (đồng)</th><th>Điểm đáy</th><th>Tháng đáy</th><th>Lũy kế dương từ</th><th>Nhu cầu vốn +20% (đồng)</th></tr>
+    <tr style="height:52px"><td>Thận trọng</td><td class="c">70%</td><td class="c">537.600.000</td><td class="c">-3.997.000</td><td class="c">3</td><td class="c">Tháng 7</td><td class="c">4.796.400</td></tr>
+    <tr style="height:52px"><td>Cơ sở</td><td class="c">100%</td><td class="c">768.000.000</td><td class="c">-3.300.000</td><td class="c">1</td><td class="c">Tháng 5</td><td class="c">3.960.000</td></tr>
+    <tr style="height:52px"><td>Lạc quan</td><td class="c">120%</td><td class="c">921.600.000</td><td class="c">-3.198.000</td><td class="c">1</td><td class="c">Tháng 4</td><td class="c">3.837.600</td></tr>
+  </table></div>
+  <div class="abs ttl red" style="left:1010px;width:380px;top:140px;font-size:26px">BẢNG TÀI CHÍNH 12 THÁNG</div>
+  <a class="qr" href="https://docs.google.com/spreadsheets/d/1OgGc76aAgeWJv0QS4G96mJgdJGyOPKlY/edit?gid=96810969#gid=96810969" target="_blank" rel="noopener" style="left:1098px;top:186px;width:200px"><img src="assets/qr-taichinh-blue.png" alt="QR bảng tài chính 12 tháng"><div class="lnk cr">(CLICK VÀO ĐÂY)</div></a>
+  <div class="abs ttl" style="left:81px;width:666px;top:450px;font-size:26px">PHƯƠNG ÁN HUY ĐỘNG VỐN</div>
+  <div class="abs" style="left:81px;top:496px;width:666px"><table class="t th-yel" style="font-size:18px">
+    <colgroup><col style="width:42%"><col style="width:22%"><col style="width:36%"></colgroup>
+    <tr style="height:52px"><th style="color:var(--ink)">Nội dung</th><th style="color:var(--ink)">Số tiền (đồng)</th><th style="color:var(--ink)">Ghi chú</th></tr>
+    <tr style="height:84px"><td>Góp vốn của 11 thành viên (500.000 đồng/người)</td><td class="c">5.500.000</td><td>Tự lực, chia lợi nhuận theo thỏa thuận sáng lập</td></tr>
+    <tr style="height:58px"><td>Nhu cầu vốn kịch bản cơ sở</td><td class="c">3.960.000</td><td></td></tr>
+    <tr style="height:66px"><td>Chênh lệch (dương là đủ vốn)</td><td class="c">1.540.000</td><td>Dương (đủ vốn)</td></tr>
+  </table></div>
+  <div class="abs ttl" style="left:774px;width:585px;top:450px;font-size:26px">PHƯƠNG ÁN DỰ PHÒNG</div>
+  <div class="box yel" style="left:774px;top:496px;width:585px;height:262px;font-size:18px;line-height:1.45;padding:18px 26px">
+    <p style="margin-bottom:12px">1. <b class="cr">Giảm</b> ngân sách truyền thông 30%, ưu tiên nội dung TikTok tự làm thay vì quảng cáo trả phí.</p>
+    <p style="margin-bottom:12px">2. <b class="cr">Đàm phán</b> xưởng in để chi phí linh kiện dưới 80.000 đồng/bộ khi in lô từ 100 bộ.</p>
+    <p>3. <b class="cr">Đẩy</b> bán trực tiếp qua fanpage và tại điểm playtest để giảm phí sàn.</p>
+  </div>
+</div></section>
+
+<!-- 21 RISK -->
+<section class="slide" id="s21" data-title="09. Khả thi & rủi ro"><div class="stage">
+  <div class="hdr">09. TÍNH KHẢ THI VÀ QUẢN TRỊ RỦI RO</div>
+  <div class="panel"></div>
+  <div class="abs cb b" style="left:20px;top:300px;font-size:24px;transform:rotate(-90deg);transform-origin:left top;top:440px">XÁC SUẤT ⇧</div>
+  <div class="abs cb b c" style="left:80px;width:80px;top:254px;font-size:19px">Cao</div>
+  <div class="abs cb b c" style="left:80px;width:80px;top:350px;font-size:19px;line-height:1.2">Trung<br>bình</div>
+  <div class="abs cb b c" style="left:80px;width:80px;top:452px;font-size:19px">Thấp</div>
+  <div class="rm" style="left:170px;top:226px;grid-template-columns:repeat(3,192px);grid-template-rows:repeat(3,98px)">
+    <div class="y"></div><div class="r">R8: Thành viên rời nhóm</div><div class="r">R1: Bán chậm<br>R3: Giá linh kiện tăng</div>
+    <div class="g"></div><div class="r">R4: Thiếu vốn<br>R5: Xưởng giao trễ<br>R7: Bị nhái thương hiệu</div><div class="r">R2: Đối thủ giảm giá</div>
+    <div class="g"></div><div class="g"></div><div class="y" style="color:var(--blue)">R6: Vi phạm hợp quy</div>
+  </div>
+  <div class="abs cb b c" style="left:170px;width:192px;top:530px;font-size:19px">Thấp</div>
+  <div class="abs cb b c" style="left:362px;width:192px;top:530px;font-size:19px">Trung bình</div>
+  <div class="abs cb b c" style="left:554px;width:192px;top:530px;font-size:19px">Cao</div>
+  <div class="abs cb b c" style="left:170px;width:576px;top:572px;font-size:24px">TÁC ĐỘNG ➡</div>
+  <div class="abs rd c" style="left:81px;top:646px;width:198px;padding:6px;font-size:16px">Điểm 6-9: xử lý ngay</div>
+  <div class="abs c" style="left:292px;top:646px;width:230px;padding:6px;font-size:16px;background:var(--yellow)">Điểm: 3-4: giảm và theo dõi</div>
+  <div class="abs gr c" style="left:540px;top:646px;width:200px;padding:6px;font-size:16px;color:var(--ink)">Điểm 1-2: chấp nhận</div>
+  <div class="abs" style="left:797px;top:226px;width:616px"><table class="t th-pink" style="font-size:13.5px">
+    <colgroup><col style="width:19%"><col style="width:52%"><col style="width:29%"></colgroup>
+    <tr style="height:42px"><th style="font-size:17px">Mặt</th><th style="font-size:17px">Bằng chứng</th><th style="font-size:17px">Kết luận</th></tr>
+    <tr style="height:62px"><td class="b">Thị trường</td><td>141 phiếu, 6 phỏng vấn, 32 bình luận; nỗi đau rõ (45/141 khó gom người); 73% chơi tại quán</td><td>Có điều kiện</td></tr>
+    <tr style="height:84px"><td class="b">Kỹ thuật, vận hành</td><td>Linh kiện đơn giản (thẻ in, thảm, hộp giấy), không cần khuôn; quy trình 6 bước có người phụ trách; công suất 20 đơn/ngày &gt; hòa vốn 1,4 bộ/ngày</td><td>Khả thi đến tháng 6; có điều kiện sau đó</td></tr>
+    <tr style="height:74px"><td class="b">Tài chính</td><td>Hòa vốn 42 bộ/tháng; vốn 5,5 triệu đồng đủ cho kịch bản thận trọng (4,80 triệu đồng) nhưng chỉ dư 0,7 triệu đồng</td><td>Có điều kiện</td></tr>
+    <tr style="height:68px"><td class="b">Pháp lý</td><td>Board game không thuộc ngành nghề kinh doanh có điều kiện đặc biệt; doanh thu dưới ngưỡng thuế 1 tỷ đồng</td><td>Có cơ sở</td></tr>
+  </table></div>
+  <svg class="abs" style="left:1078px;top:568px" width="48" height="40" viewBox="0 0 48 40"><path d="M2 2h44L24 38z" fill="#FF5592" stroke="#c0336a" stroke-width="2"/></svg>
+  <div class="abs c" style="left:797px;width:616px;top:618px;font:30px var(--display);color:var(--green)">KHẢ THI <span class="cb">CÓ</span> ĐIỀU KIỆN</div>
+  <div class="box pk" style="left:826px;top:664px;width:560px;height:92px;font-size:17.5px;line-height:1.45;border-radius:14px">Play test tháng 12: đặt trước &gt; = 30% ở giá 200.000đ<br>Lãi góp &gt;= 40.000đ/bộ nhờ giảm biến phí</div>
+</div></section>
+
+<!-- 22 ROADMAP -->
+<section class="slide smh" id="s22" data-title="10. Lộ trình theo quý"><div class="stage">
+  <div class="hdr sm">10.LỘ TRÌNH 12 THÁNG VÀ KẾT LUẬN</div>
+  <div class="panel" style="top:110px"></div>
+  <div class="abs ttl red" style="left:0;width:1440px;top:126px;font-size:30px">LỘ TRÌNH THEO QUÝ</div>
+  <div class="abs" style="left:4px;top:180px;width:1432px"><table class="t th-blue" style="font-size:18px">
+    <colgroup><col style="width:16.5%"><col style="width:16.3%"><col style="width:22.3%"><col style="width:22.6%"><col style="width:22.3%"></colgroup>
+    <tr style="height:56px"><th style="font-size:26px;font-weight:500">Quý</th><th style="font-size:26px;font-weight:500">Mục tiêu</th><th style="font-size:26px;font-weight:500">Việc chính</th><th style="font-size:26px;font-weight:500">Mốc và chỉ số</th><th style="font-size:26px;font-weight:500">Người phụ trách</th></tr>
+    <tr style="height:142px"><td>Quý 1<br>T1–T3<br>(11/2026–01/2027)</td><td>Ra mắt, kiểm chứng giá, mở bán</td><td>Mở đặt trước; chuỗi playtest; mở bán 23/12; ra mắt gian hàng và gửi bộ cho 3–5 KOC (tháng 1); đàm phán giá linh kiện với 2 xưởng</td><td>270 bộ bán (1→5 bộ/ngày); tỷ lệ đặt trước ≥ 30% ở playtest; có báo giá mới</td><td>Phạm Hoàng Quân (bán, truyền thông); Đặng Hương Giang (báo giá)</td></tr>
+    <tr style="height:154px"><td>Quý 2<br>T4–T6<br>(02–04/2027)</td><td>Vượt hòa vốn, dương dòng tiền</td><td>Booking KOC review gameplay (tháng 2); đặt bộ chơi thử tại 5–10 quán; quảng cáo duy trì; đóng bộ sẵn theo lô</td><td>7→10 bộ/ngày; lũy kế dương từ tháng 5; tra cứu, nộp đơn nhãn hiệu</td><td>Vũ Xuân Hà (vận hành); Nguyễn Huỳnh Ái Nhân (nhãn hiệu)</td></tr>
+    <tr style="height:122px"><td>Quý 3<br>T7–T9<br>(05–07/2027)</td><td>Nâng công suất, chuẩn bị mở rộng</td><td>Chuyển đơn sang vận chuyển của sàn; thiết kế bản mở rộng; chuẩn bị chiến dịch tựu trường</td><td>Công suất 20 đơn/ngày; 12→15 bộ/ngày; bản mở rộng sẵn sàng in thử</td><td>Vũ Xuân Hà; Võ Ngọc Uyên Lan (bản mở rộng)</td></tr>
+    <tr style="height:122px"><td>Quý 4<br>T10–T12<br>(08–10/2027)</td><td>Củng cố, quyết định bước tiếp</td><td>Chiến dịch tựu trường; chào hàng doanh nghiệp với “Làm Đại Đi”; đánh giá chuyển công ty TNHH</td><td>15→20 bộ/ngày; 3 tháng liên tiếp có dòng tiền dương; tối thiểu 3 khách doanh nghiệp tiềm năng</td><td>Nguyễn Huỳnh Ái Nhân</td></tr>
+  </table></div>
+</div></section>
+
+<!-- 23 MILESTONES & CONCLUSION -->
+<section class="slide smh" id="s23" data-title="10. Mốc kiểm tra & kết luận"><div class="stage">
+  <div class="hdr sm">10.LỘ TRÌNH 12 THÁNG VÀ KẾT LUẬN</div>
+  <div class="panel" style="top:110px"></div>
+  <div class="abs ttl" style="left:63px;width:706px;top:140px;font-size:26px">MỐC KIỂM TRA VÀ QUYẾT ĐỊNH ĐI KÈM</div>
+  <div class="abs" style="left:63px;top:182px;width:706px"><table class="t th-pink" style="font-size:14px">
+    <colgroup><col style="width:16%"><col style="width:44%"><col style="width:40%"></colgroup>
+    <tr style="height:40px"><th style="font-size:17px">Mốc</th><th style="font-size:17px">Điều kiện đạt</th><th style="font-size:17px">Quyết định nếu không đạt</th></tr>
+    <tr style="height:66px"><td>Tháng 2 (12/2026)</td><td>Tỷ lệ đặt trước ≥ 30% ở giá 200.000 đồng; ≥ 80% nhóm chơi hết ván</td><td>Xem lại giá hoặc cấu trúc sản phẩm trước khi in lô thứ hai</td></tr>
+    <tr style="height:66px"><td>Tháng 3 (01/2027)</td><td>Báo giá linh kiện giúp lãi góp ≥ 40.000 đồng/bộ; bán lũy kế 270 bộ</td><td>Giảm quảng cáo trả phí 30%, ưu tiên bán trực tiếp</td></tr>
+    <tr style="height:66px"><td>Tháng 6 (04/2027)</td><td>Lũy kế dòng tiền dương; 10 bộ/ngày</td><td>Kích hoạt phương án dự phòng.</td></tr>
+    <tr style="height:66px"><td>Tháng 9 (07/2027)</td><td>Công suất 20 đơn/ngày; bản mở rộng sẵn sàng</td><td>Hoãn bản mở rộng, tập trung sản phẩm chính</td></tr>
+    <tr style="height:66px"><td>Tháng 12 (10/2027)</td><td>Ba tháng liên tiếp dòng tiền dương; có khách doanh nghiệp</td><td>Giữ hình thức hộ kinh doanh, chưa chuyển công ty</td></tr>
+  </table></div>
+  <div class="abs ttl" style="left:846px;width:526px;top:140px;font-size:24px">BÀI HỌC CỦA NHÓM</div>
+  <div class="box yel b c" style="left:846px;top:200px;width:526px;height:52px;padding:13px;font-size:18px">Đo bằng hành vi, không bằng cảm nhận.</div>
+  <div class="box yel b c" style="left:846px;top:276px;width:526px;height:52px;padding:13px;font-size:18px">Bước chậm nhất quyết định công suất.</div>
+  <div class="box yel b c" style="left:846px;top:358px;width:526px;height:52px;padding:13px;font-size:18px">Chọn hình thức pháp lý theo giai đoạn và theo luật.</div>
+  <div class="box yel b c" style="left:846px;top:440px;width:526px;height:52px;padding:13px;font-size:18px">Cải tiến sau góp ý giữa kỳ.</div>
+  <div class="box" style="left:54px;top:590px;width:1287px;height:200px;background:#fbe4ec;border-radius:20px;padding:26px 30px;font-size:19px;line-height:1.6">
+    Mô hình kinh doanh đơn giản, chi phí cố định thấp, <b>nhu cầu vốn nhỏ</b> và đã được nhóm tự đáp ứng.<br>
+    Điểm yếu cốt lõi là biên lãi góp <b>8,5%</b>, khiến dự án rất nhạy với chi phí linh kiện và giá bán.<br>
+    <b class="cr" style="font-size:26px">=&gt; Khả thi có điều kiện</b><br>
+    <i style="font-size:15px">(khách có trả 200.000 đồng không và chi phí biến đổi có giảm được không.)</i>
+  </div>
+  <div class="abs pk c" style="left:1058px;top:566px;width:278px;height:62px;line-height:62px;border-radius:14px;font:28px/62px var(--display)">KẾT LUẬN</div>
+</div></section>
+
+<!-- 24 THANK YOU -->
+<section class="slide blue" id="s24" data-title="Cảm ơn"><div class="stage">
+  <div class="thanks">XIN CẢM ƠN VÀ RẤT MONG<br>ĐƯỢC HỢP TÁC CÙNG<br>QUÝ NHÀ ĐẦU TƯ</div>
+  <img class="abs" src="assets/handshake.png" alt="" style="left:540px;top:430px;width:360px">
+</div></section>
+
+</main>
+<p class="hint">Mẹo: xoay ngang điện thoại hoặc bấm “Trình chiếu” để xem rõ hơn.</p>
+<footer>© 2026 Nhóm 1 · Zui Dee – Boardgame bỏ túi · Học phần Tinh thần doanh nhân</footer>
+
+<div class="pnav"><button id="pPrev">◀</button><button id="pCount">1/24</button><button id="pNext">▶</button><button id="pExit">✕</button></div>
+
+<script>
+(function(){
+  const root=document.documentElement, slides=[...document.querySelectorAll('.slide')];
+  slides.forEach((s,i)=>{const n=document.createElement('div');n.className='num';n.textContent=i+1;s.querySelector('.stage').appendChild(n);});
+  const sel=document.getElementById('jump');
+  slides.forEach((s,i)=>{const o=document.createElement('option');o.value=i;o.textContent=(i+1)+'. '+s.dataset.title;sel.appendChild(o);});
+  let cur=0, present=false;
+  function fit(){
+    let k;
+    if(present){k=Math.min(innerWidth/1440,innerHeight/810);}
+    else{k=slides[0].getBoundingClientRect().width/1440;}
+    root.style.setProperty('--k',k);
+  }
+  function show(i){cur=Math.max(0,Math.min(slides.length-1,i));slides.forEach((s,j)=>s.classList.toggle('cur',j===cur));document.getElementById('pCount').textContent=(cur+1)+'/'+slides.length;sel.value=cur;}
+  function enter(){present=true;document.body.classList.add('present');show(curVisible());fit();if(document.documentElement.requestFullscreen)document.documentElement.requestFullscreen().catch(()=>{});}
+  function exit(){present=false;document.body.classList.remove('present');if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});fit();slides[cur].scrollIntoView();}
+  function curVisible(){let best=0,bd=1e9;slides.forEach((s,i)=>{const d=Math.abs(s.getBoundingClientRect().top-70);if(d<bd){bd=d;best=i;}});return best;}
+  sel.onchange=()=>{cur=+sel.value;slides[cur].scrollIntoView({behavior:'smooth'});};
+  document.getElementById('btnPresent').onclick=enter;
+  document.getElementById('pPrev').onclick=()=>show(cur-1);
+  document.getElementById('pNext').onclick=()=>show(cur+1);
+  document.getElementById('pExit').onclick=exit;
+  document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement&&present)exit();});
+  document.addEventListener('keydown',e=>{
+    if(e.key==='f'||e.key==='F'){present?exit():enter();return;}
+    if(!present)return;
+    if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();show(cur+1);}
+    else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();show(cur-1);}
+    else if(e.key==='Home')show(0); else if(e.key==='End')show(slides.length-1);
+    else if(e.key==='Escape')exit();
+  });
+  document.querySelectorAll('.toc a').forEach(a=>a.addEventListener('click',e=>{if(present){e.preventDefault();show(slides.findIndex(s=>'#'+s.id===a.getAttribute('href')));}}));
+  let tx=null;
+  document.addEventListener('touchstart',e=>{if(present)tx=e.touches[0].clientX;},{passive:true});
+  document.addEventListener('touchend',e=>{if(present&&tx!==null){const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>40)show(cur+(d<0?1:-1));tx=null;}});
+  document.addEventListener('scroll',()=>{if(!present)sel.value=curVisible();},{passive:true});
+  addEventListener('resize',fit); fit(); show(0);
+  if(document.fonts)document.fonts.ready.then(fit);
+})();
+</script>
+</body>
+</html>
