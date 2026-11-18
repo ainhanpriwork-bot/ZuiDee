@@ -189,7 +189,7 @@ function renderSetup() {
 function newGame(list, firstDealer) {
   const sDeck = shuffle(G.specials.map(c => c.id));
   const players = list.map((x, i) => ({
-    id: x.id, name: x.name, color: COLORS[i], tokens: G.startTokens, marks: 0, hand: [sDeck.pop()], alive: true, flags: {}
+    id: x.id, name: x.name, color: x.color || COLORS[i], tokens: G.startTokens, marks: 0, hand: [sDeck.pop()], alive: true, flags: {}
   }));
   S = {
     players, bank: G.totalTokens - G.startTokens * players.length,
@@ -488,8 +488,13 @@ function runFx(ev) {
     case "roll": animateDice(ev.final); break;
     case "timer": startTimer(ev.secs, ev.label); break;
     case "elim":
-      modal({ title: esc(G.elim) + "!", body: `<div class="reveal"><img src="${A("mark")}" alt=""><div class="rt"><h2 class="disp" style="margin:0">${esc(ev.name)}</h2><p>đã tích đủ 3 ${esc(G.mark)} và bị loại khỏi ván chơi. Token còn lại về ${esc(G.bank)}.</p></div></div>`, buttons: [{ label: "Tiễn đồng chí 🫡", cls: "pink" }] });
+      if (online() && ev.pid && ev.pid === ME) {
+        modal({ title: "Bạn đã thua!", cls: "lose-mask", close: false, body: `<div class="lose-box"><div class="lose-emoji">💀</div><h2 class="disp">${esc(G.elim)}!</h2><p>Bạn đã dính đủ 3 ${esc(G.mark)} nên <b>không được chơi tiếp</b> ván này: không đặt cược, không dùng thẻ. Bạn vẫn có thể ở lại xem cả bàn chơi.</p></div>`, buttons: [{ label: "👀 Ở lại xem", cls: "pink" }] });
+      } else {
+        modal({ title: esc(G.elim) + "!", body: `<div class="reveal"><img src="${A("mark")}" alt=""><div class="rt"><h2 class="disp" style="margin:0">${esc(ev.name)}</h2><p>đã tích đủ 3 ${esc(G.mark)} → bị loại và <b>không được chơi tiếp</b>. Token còn lại về ${esc(G.bank)}.</p></div></div>`, buttons: [{ label: "Tiễn đồng chí 🫡", cls: "pink" }] });
+      }
       buzz(); break;
+    case "winner": showWinner(ev); break;
     case "vetoed":
       modal({ title: "BỊ VETO!", body: `<div class="reveal"><img src="${A("s12")}" alt=""><div class="rt"><h2 class="disp" style="margin:0">${esc(ev.by)}</h2><p>đã vô hiệu hóa thẻ “${esc(ev.card)}” của ${esc(ev.of)}. Cả 2 thẻ vào xấp bỏ.</p></div></div>`, buttons: [{ label: "Đau thế 😭", cls: "pink" }] });
       buzz(); break;
@@ -550,7 +555,7 @@ function renderGame() {
   </div>
   ${G.id === "hdd" ? `<div class="strip" style="background-image:url(${A("strip_c1")})"></div>` : ""}
   <div class="netstat ${NET.status && online() ? "" : "hidden"}" id="netStat">${esc(NET.status)}</div>
-  ${MODE === "client" && !ME ? `<div class="netstat">👀 Bạn đang xem với tư cách khán giả.</div>` : ""}
+  ${spectatorBanner()}
   <div class="layout">
     <div class="stage">
       <div class="phase-banner">${phaseBanner()}</div>
@@ -576,6 +581,14 @@ function renderGame() {
   paintTimer();
   if (MODE === "local") ls.set(SAVE_KEY, { g: G.id, s: S });
   if (MODE === "host") { saveHost(); broadcastState(); }
+}
+function spectatorBanner() {
+  if (!online() || S.phase === "over") return "";
+  const me = ME && P(ME);
+  if (!ME) return `<div class="netstat">👀 Bạn đang xem với tư cách khán giả.</div>`;
+  if (!me) return `<div class="netstat">👀 Bạn đã thua ở ván trước nên không được chơi tiếp – đang xem cả bàn chơi.</div>`;
+  if (!me.alive) return `<div class="netstat lose">💀 Bạn đã bị “${esc(G.elim)}” – không được chơi tiếp, chỉ được xem.</div>`;
+  return "";
 }
 function onlineCount() { return (S.online || NET.roster.map(r => ({ on: r.pid === "p0" || r.online }))).filter(x => x.on).length; }
 function isOnline(pid) {
@@ -780,7 +793,7 @@ function bindGame() {
   document.querySelectorAll("[data-b]").forEach(b => b.onclick = () => { selBettor = b.dataset.b; renderGame(); });
   document.querySelectorAll(".tile").forEach(t => t.onclick = () => {
     if (!(S.phase === "bet" || S.phase === "late")) return;
-    if (online()) { if (!ME) return; act({ k: "bet", loc: +t.dataset.loc }); }
+    if (online()) { if (!ME) return; if (!P(ME) || !P(ME).alive) { toast("Bạn đã bị loại – chỉ được xem 👀"); return; } act({ k: "bet", loc: +t.dataset.loc }); }
     else { if (!selBettor) { toast("Chọn người đặt cược trước nhé!"); return; } act({ k: "bet", loc: +t.dataset.loc, pid: selBettor }); }
   });
   document.querySelectorAll("[data-chip]").forEach(c => c.onclick = e => {
@@ -1006,7 +1019,7 @@ function checkElims() {
       p.alive = false; any = true;
       S.bank += p.tokens + ((S.phase === "bet" || S.phase === "late") ? betSum(p.id) : 0); p.tokens = 0; S.specialDiscard.push(...p.hand); p.hand = []; S.bets[p.id] = {};
       log(`💀 <b>${esc(p.name)}</b> dính đủ 3 ${G.mark} → “${G.elim}”!`);
-      emitFx({ fx: "elim", name: p.name });
+      emitFx({ fx: "elim", name: p.name, pid: p.id });
     }
   });
   if (alive().length <= 1) { endGame("last"); return true; }
@@ -1045,7 +1058,30 @@ function endGame(reason) {
   log(`🏆 ${winners.map(p => esc(p.name)).join(" & ")} là “${G.win}”!`);
   if (MODE === "local") ls.del(SAVE_KEY);
   renderEnd();
-  emitFx({ fx: "confetti" });
+  emitFx({ fx: "winner", reason, winners: winners.map(p => ({ id: p.id, name: p.name, color: p.color })), out: S.players.filter(p => !p.alive).map(p => p.name) });
+}
+function showWinner(ev) {
+  document.querySelectorAll(".win-mask").forEach(m => m.remove());
+  const names = ev.winners.map(w => esc(w.name)).join(" & ");
+  const meWin = online() && ev.winners.some(w => w.id === ME);
+  const meIn = online() && ME && S && S.players.some(p => p.id === ME);
+  const head = !online() ? "Chúc mừng!" : meWin ? "BẠN THẮNG RỒI! 🎉" : meIn ? "Bạn đã thua ván này" : "Kết thúc ván!";
+  const why = ev.reason === "last" ? "Người duy nhất còn trụ lại trên bàn" : `Xấp ${esc(G.challenge)} đã hết – giàu Token nhất`;
+  const box = document.createElement("div");
+  box.innerHTML = `<div class="win-box">
+    <div class="win-head">${head}</div>
+    <div class="win-trophy">🏆</div>
+    <div class="win-label">${esc(G.win)}</div>
+    <div class="win-names">${ev.winners.map(w => `<span class="win-chip" style="background:${w.color}">${esc(w.name)}</span>`).join("")}</div>
+    <div class="hint">${why}</div>
+    ${ev.out && ev.out.length ? `<div class="win-out">💀 Bị loại, không được chơi tiếp: <b>${ev.out.map(esc).join(", ")}</b></div>` : ""}
+  </div>`;
+  modal({ title: "Công bố người chiến thắng", body: box, cls: "win-mask", buttons: [{ label: "Xem bảng xếp hạng ▶", cls: "pink" }] });
+  confetti(); fanfare();
+}
+function fanfare() {
+  [[523, 0], [523, 140], [523, 280], [659, 420], [784, 700], [659, 900], [784, 1050], [1046, 1250]]
+    .forEach(([f, t]) => setTimeout(() => beep(f, t >= 1250 ? .6 : .18, "square", .07), t));
 }
 function renderEnd() {
   if (MODE === "host") { saveHost(); broadcastState(); }
@@ -1062,16 +1098,38 @@ function renderEnd() {
     <table class="rank"><tr><th>#</th><th>Người chơi</th><th>Token</th><th>${esc(G.markShort)}</th><th></th></tr>
     ${ranked.map((p, i) => `<tr><td>${i + 1}</td><td><span class="rdot" style="background:${p.color}"></span> ${esc(p.name)}</td><td>${p.tokens}</td><td>${p.marks}/3</td><td>${p.alive ? "" : "💀"}</td></tr>`).join("")}</table>
     <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-      ${MODE === "client" ? `<div class="hint">Chờ chủ phòng mở ván mới… hoặc</div>` : `<button class="btn big pink" id="eAgain">↺ Chơi lại (cùng nhóm)</button>`}
+      ${MODE === "client" ? `<div class="hint">${ME && S.players.some(p => p.id === ME && !p.alive) ? "💀 Bạn đã bị loại ở ván này. " : ""}Chờ chủ phòng mở ván mới… hoặc</div>` : endButtons()}
       <button class="btn big" id="eSwitch">${MODE === "client" ? "Rời phòng" : "Về trang chủ"}</button>
     </div></div></div>`;
   $("#eHome").onclick = renderHome;
   $("#eSwitch").onclick = () => { if (MODE === "client") ls.del(CLIENT_KEY); if (MODE === "host") ls.del(HOST_KEY); renderHome(); };
+  const restart = list => {
+    const first = list.find(x => S.winner.includes(x.id)) || list[0];
+    if (MODE === "host") NET.started = true;
+    newGame(list, first.id);
+    if (MODE === "host") saveHost();
+  };
   const ag = $("#eAgain");
   if (ag) ag.onclick = () => {
-    if (MODE === "host") { NET.started = true; newGame(NET.roster.map(r => ({ id: r.pid, name: r.name })), NET.roster[0].pid); saveHost(); }
-    else { const list = S.players.map(p => ({ id: p.id, name: p.name })); newGame(list, list[0].id); }
+    const list = MODE === "host" ? NET.roster.map((r, i) => ({ id: r.pid, name: r.name, color: P(r.pid)?.color || COLORS[i] })) : S.players.map(p => ({ id: p.id, name: p.name, color: p.color }));
+    restart(list);
   };
+  const as = $("#eSurvive");
+  if (as) as.onclick = () => {
+    const list = S.players.filter(p => p.alive).map(p => ({ id: p.id, name: p.name, color: p.color }));
+    if (list.length < 2) return;
+    const out = S.players.filter(p => !p.alive).map(p => p.name);
+    restart(list);
+    log(`🚫 Không được chơi tiếp (đã thua ván trước): ${out.map(esc).join(", ")}`);
+    renderGame();
+  };
+}
+function endButtons() {
+  const surv = S.players.filter(p => p.alive);
+  const out = S.players.length - surv.length;
+  if (out > 0 && surv.length >= 2) return `<button class="btn big pink" id="eSurvive">▶ Chơi tiếp – loại người thua (${surv.length} người)</button>
+      <button class="btn big" id="eAgain">↺ Ván mới cho cả nhóm</button>`;
+  return `<button class="btn big pink" id="eAgain">↺ Chơi lại (cùng nhóm)</button>`;
 }
 function confetti() {
   const cols = ["#EC138C", "#FFD200", "#3BB54A", "#7280ED", "#F47B20"];
@@ -1245,5 +1303,5 @@ if (jc) {
 window.addEventListener("beforeunload", e => { if (MODE === "host" && NET.started) { e.preventDefault(); e.returnValue = ""; } });
 
 // hook kiểm thử
-window.__zd = { get S() { return S; }, get G() { return G; }, get MODE() { return MODE; }, get ME() { return ME; }, get NET() { return NET; } };
+window.__zd = { get S() { return S; }, get G() { return G; }, get MODE() { return MODE; }, get ME() { return ME; }, get NET() { return NET; }, render: () => renderGame() };
 })();
